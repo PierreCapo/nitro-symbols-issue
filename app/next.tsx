@@ -6,7 +6,7 @@ import { SymbolView as ExpoSymbolView } from "expo-symbols";
 import { useEffect } from "react";
 import { SymbolView as NitroSymbolView } from "react-native-nitro-symbols";
 
-export default function TabOneScreen() {
+export default function Screen() {
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -17,11 +17,8 @@ export default function TabOneScreen() {
   }, []);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <Button
-        title="Push next screen"
-        onPress={() => router.navigate("/next")}
-      />
+      <Text style={styles.title}>Next Screen</Text>
+      <Button title="Pop to previous screen" onPress={() => router.back()} />
     </View>
   );
 }
